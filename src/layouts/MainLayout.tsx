@@ -5,7 +5,7 @@ import Footer from "../components/Footer"
 
 const MainLayout = () => {
   return (
-    <div className='w-full font-unbounded'>
+    <div className='w-full font-unbounded min-h-screen flex flex-col'>
       <Header />
 
       <Container>

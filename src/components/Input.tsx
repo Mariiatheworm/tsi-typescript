@@ -1,6 +1,6 @@
-import { ChangeEvent, FC, HTMLAttributes, useState } from "react"
+import { ChangeEvent, FC, InputHTMLAttributes, useState } from "react"
 
-interface IInputProps extends HTMLAttributes<HTMLInputElement> {
+interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string
 }
 
@@ -15,7 +15,7 @@ const Input: FC<IInputProps> = ({ label, ...rest }) => {
     <div className='flex flex-col gap-3 font-unbounded'>
       {label}
       <input
-        className='border border-black rounded-xl'
+        className='border border-black rounded-xl p-2'
         value={value}
         onChange={handleChange}
         {...rest}

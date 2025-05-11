@@ -1,22 +1,21 @@
-import { ReactNode } from "react";
+import { ReactNode } from "react"
 
-type SizeType = "small"|"medium"|"large"
-type ColorType = "primary"|"secondary"
+type SizeType = "small" | "medium" | "large"
+type ColorType = "primary" | "secondary"
 
 interface ITextProps {
-  size: SizeType;
-  color: ColorType;
-  children: ReactNode;
+  size?: SizeType
+  color?: ColorType
+  children?: ReactNode
 }
 
 const Text = (props: ITextProps) => {
-  const { size = "small", color = "primary", children = "text" } = props;
-  const defaultClass =
-    "flex items-center rounded-2 h-[40px] w-[max-content] px-4 py-2";
+  const { size = "small", color = "primary", children = "text" } = props
+  const defaultClass = "w-full"
 
   const classes = {
     colors: {
-      primary: "text-red-500",
+      primary: "text-black",
       secondary: "text-white",
     },
     sizes: {
@@ -24,7 +23,7 @@ const Text = (props: ITextProps) => {
       medium: "text-xl",
       large: "text-3xl",
     },
-  };
+  }
 
   return (
     <div
@@ -34,7 +33,7 @@ const Text = (props: ITextProps) => {
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Text;
+export default Text

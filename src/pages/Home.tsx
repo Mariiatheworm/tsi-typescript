@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Button } from "../components/Button"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
 import Text from "../components/Text"
 import Modal from "../components/Modal"
 import Input from "../components/Input"
@@ -35,7 +36,6 @@ const Home = () => {
 
   const handleAddJob = async () => {
     try {
-
       const response = await fetch("http://localhost:5000/api/data", {
         method: "POST",
         headers: {
@@ -64,7 +64,17 @@ const Home = () => {
   }
 
   return (
-    <div className='flex justify-center items-center flex-col gap-8'>
+    <div className='flex justify-center items-center flex-col gap-4'>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>Главная страница QUICKY</title>
+        <meta name='description' content='Quicky' />
+        <meta
+          name='keywords'
+          content='quicky, сервис, подработка, работа, услуга, мастер'
+        />
+      </Helmet>
+
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <div className='flex text-3xl font-inter'>Добавление услуги</div>
         <div className='flex justify-left flex-col gap-10'>
@@ -74,6 +84,7 @@ const Home = () => {
               name='name'
               value={newJob.name}
               onChange={handleInputChange}
+              placeholder="Название услуги"
             />
           </div>
           <div>
@@ -83,6 +94,7 @@ const Home = () => {
               name='price'
               value={newJob.price}
               onChange={handleInputChange}
+              placeholder="Стоимость"
             />
           </div>
           <Button size='small' color='primary' onClick={handleAddJob}>
@@ -91,7 +103,7 @@ const Home = () => {
         </div>
       </Modal>
 
-      <Text size='large' color='black'>
+      <Text size='large'>
         QUICKY - сервис поиска подработки. Найдите мастера и получите услугу!
       </Text>
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="w-full flex flex-row justify-between gap-2 h-20 py-5 px-[300px]">
+    <header className="w-full flex flex-row justify-between gap-2 h-20 py-5 lg:px-[300px] px-8">
       <div className="flex flex-row justify-left font-semibold font-inter gap-16">
         <Link to={"/"} className="text-black">
           <img src="/logo.png" alt="logo" className="w-[122px]" />
