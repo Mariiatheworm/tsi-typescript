@@ -8,8 +8,15 @@ app.use(express.json());
 
 //Метод GET
 
+const jobs = [
+  { id: 0, name: "Уборка коммерческого помещения", price: 5000 },
+  { id: 1, name: "Кейтеринг на мероприятии", price: 10000 },
+  { id: 2, name: "Присмотр за ребенком", price: 3500 },
+  { id: 3, name: "Эмалирование ванной", price: 2000 },
+];
+
 app.get('/api/data', (req, res) => {
-    res.json({message: 'Hello from Express!', title: "Яблоко"});
+    res.json(jobs);
 });
 
 //http://localhost:5000/api/data

@@ -1,17 +1,17 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 type SizeType = "small"|"medium"|"large"
 type ColorType = "primary"|"secondary"
 
 
-interface IButtonProps {
+interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
   size: SizeType;
   color: ColorType;
   children: ReactNode;
 }
 
 export const Button = (props: IButtonProps) => {
-  const { size, color, children} = props;
+  const { size, color, children, ...rest} = props;
   const defaultClass =
     "flex items-center rounded-2 h-[40px] w-[max-content] px-4 py-2";
 
@@ -34,7 +34,7 @@ export const Button = (props: IButtonProps) => {
   };
 
   return (
-    <div
+    <button
       className={
         defaultClass +
         " " +
@@ -42,8 +42,9 @@ export const Button = (props: IButtonProps) => {
         " " +
         classes.colors[color].button
       }
+      {...rest}
     >
       <div className={classes.colors[color].text}>{children}</div>
-    </div>
+    </button>
   );
 };

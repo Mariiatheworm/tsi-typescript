@@ -1,5 +1,4 @@
-import React from "react";
-import Input from "../components/input";
+import Input from "../components/Input";
 
 const Registration = () => {
   return (

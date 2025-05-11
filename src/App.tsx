@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home";
-import About from "./pages/about";
-import Contacts from "./pages/contacts";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
 import MainLayout from "./layouts/main-layout";
-import Registration from "./pages/registration";
-import Login from "./pages/login";
+import Registration from "./pages/Registration";
+import Login from "./pages/Login";
 
 function App() {
   return (
